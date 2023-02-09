@@ -32,8 +32,8 @@ const TodoStack = ({ navigation }) => {
               }}
               onPress={() => navigation.goBack()}
             >
-              <Text style={{ fontSize: 20, fontWeight: 'bold' }}>◄ </Text>
-              <Text style={{ fontSize: 20 }}>Settings</Text>
+              <Text style={{ fontSize: 20, fontWeight: 'bold', color:'black' }}>◄ </Text>
+              <Text style={{ fontSize: 20, color:'black' }}>Settings</Text>
             </TouchableOpacity>
           ),
         }}
@@ -57,8 +57,8 @@ const NotesStack = ({ navigation }) => {
               }}
               onPress={() => navigation.goBack()}
             >
-              <Text style={{ fontSize: 20, fontWeight: 'bold' }}>◄ </Text>
-              <Text style={{ fontSize: 20 }}>Settings</Text>
+              <Text style={{ fontSize: 20, fontWeight: 'bold', color:'black' }}>◄ </Text>
+              <Text style={{ fontSize: 20, color:'black' }}>Settings</Text>
             </TouchableOpacity>
           ),
         }}

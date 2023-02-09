@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     text:{
         fontSize:20,
         padding:'3%',
-        fontWeight:'bold'
+        fontWeight:'bold',
+        color:'black'
     }
 });

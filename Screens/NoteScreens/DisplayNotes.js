@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-        backgroundColor: "#F6F6F6"
+        backgroundColor: "lightgray"
     },
 
     onShow: {
@@ -90,5 +90,6 @@ const styles = StyleSheet.create({
 
     goBackBtn: {
         fontSize: 30,
+        color:'black'
     }
 })

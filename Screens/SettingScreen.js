@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 export default Settings = () => {
     return (
         <View>
-            <Text>Setting Screen</Text>
+            <Text style={{color:'black'}}>Setting Screen</Text>
         </View>
     )
 }

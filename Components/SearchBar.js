@@ -5,6 +5,7 @@ export default Bar = (props) => {
         <View style={props.visible?styles.container1:styles.container}>
             <TextInput
                 placeholder={props.title}
+                placeholderTextColor="black"
                 style={styles.textinput}
             />
         </View>
@@ -17,6 +18,7 @@ const styles  = StyleSheet.create({
         borderRadius:40,
         padding:8,
         paddingLeft:20,
+        color:'black' 
     },
 
     container:{

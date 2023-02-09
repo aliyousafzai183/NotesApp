@@ -28,5 +28,6 @@ const styles = StyleSheet.create({
 
     text2: {
         fontSize:12,
+        color:'black'
     }
 });

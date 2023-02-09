@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
         width: 23,
         height: 23,
         borderRadius: 40,
-        marginRight:'2%'
+        marginRight:'2%',
+        color:'black'
     },
 
     text2: {
