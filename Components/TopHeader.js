@@ -13,7 +13,7 @@ export default Header = (props) => {
 const styles = StyleSheet.create({
     container:{
         display:'flex',
-        flexDirection:'row-reverse'
+        flexDirection:'row-reverse',
     },
     
     text:{

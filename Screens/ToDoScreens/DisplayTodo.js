@@ -3,7 +3,6 @@ import { View, StyleSheet, ScrollView, Text } from 'react-native';
 // components
 import TopHeader from '../../Components/TopHeader';
 import NotesHead from '../../Components/SecondHeader';
-import Bar from '../../Components/SearchBar';
 import Todo from '../../Components/TodoComponent';
 
 export default Display = ({navigation}) => {
@@ -11,7 +10,6 @@ export default Display = ({navigation}) => {
         <View style={styles.container}>
             <TopHeader icon=": :" navigation={navigation} />
             <NotesHead title="to-dos" navigation={navigation}/>
-            <Bar title="Search to-dos" />
 
             <ScrollView style={styles.ScrollView}>
                 <Todo text="1 Dozen Eggs" />
