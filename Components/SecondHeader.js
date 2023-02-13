@@ -5,7 +5,7 @@ export default NotesHead = (props) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => props.navigation.openDrawer()}>
-                <Text style={styles.text}>All {props.title} { (useDrawerStatus() === 'open' ? "►" : "▼")} </Text>
+                <Text style={styles.text}>All {props.title} { (useDrawerStatus() === 'open' ? props.icon1 : props.icon2)} </Text>
             </TouchableOpacity>
             <Text style={styles.text2}>0 {props.title}</Text>
         </View>

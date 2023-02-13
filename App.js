@@ -3,10 +3,12 @@ import 'react-native-gesture-handler';
 // importing components
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { TouchableOpacity, Text } from 'react-native';
+
+// Import vector icons
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // pages
 import NotesDisplay from './Screens/NoteScreens/DisplayNotes';
@@ -16,7 +18,7 @@ import About from './Screens/Aboutus';
 import DeletePage from './Screens/DeleteItems';
 
 // navigation stacks
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 const RightDrawer = createDrawerNavigator();
 const LeftDrawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -365,18 +367,23 @@ const App = () => {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen
-          name="Notess"
+          name="Notes"
           component={RightDrawerNotes}
           options={{
             headerShown: false,
+            tabBarActiveTintColor:'#1b93cf',
+            tabBarIcon:({focused})=><Icon name = 'tasks' size={30} color={focused ? '#1b93cf' : 'gray'}/>
           }}
         />
         <Tab.Screen
-          name="Todos"
+          name="To-dos"
           component={RightDrawerTodo}
           options={{
             headerShown: false,
-            tabBarLabel: 'To-dos',
+            tabBarActiveTintColor:'#1b93cf',
+            tabBarIcon:({focused})=>(
+              <Icon name = 'check-circle' size={30} color={focused ? '#1b93cf' : 'gray'}/>
+            )
           }}
         />
       </Tab.Navigator>

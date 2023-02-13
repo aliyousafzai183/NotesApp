@@ -5,9 +5,9 @@ export default Todo = (props) => {
     return (
         <TouchableOpacity style={styles.container}>
             <TouchableOpacity>
-                <Text style={styles.text}></Text>
+                <Text>{props.icon}</Text>
             </TouchableOpacity>
-            <Text style={styles.text2}>{props.text}</Text>
+            <Text style={styles.text2}>{"  "+props.text}</Text>
         </TouchableOpacity>
     )
 }
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         padding: 20,
         marginTop: '5%',
         flexDirection: 'row',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
     },
 
     text: {

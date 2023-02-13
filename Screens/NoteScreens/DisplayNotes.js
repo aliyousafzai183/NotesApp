@@ -1,6 +1,9 @@
 import { View, Text, StyleSheet, Keyboard, TouchableOpacity} from 'react-native';
 import { useState, useEffect } from 'react';
 
+// Import vector icons
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 // components
 import Header from '../../Components/TopHeader';
 import NotesHead from '../../Components/SecondHeader';
@@ -35,10 +38,10 @@ export default Display = ({ navigation }) => {
     return (
         <View style={styles.container}>
             {
-                (isKeyboardVisible ? <View></View> : <Header icon=": :" navigation={navigation} />)
+                (isKeyboardVisible ? <View></View> : <Header icon={<Icon name='navicon' size ={20} color='black'/>} navigation={navigation} />)
             }
             {
-                (isKeyboardVisible ? <View></View> : <NotesHead title="notes" navigation={navigation} />)
+                (isKeyboardVisible ? <View></View> : <NotesHead title={"notes "} icon1={<Icon name='caret-left' size ={30} color='black'/>} icon2={<Icon name='caret-down' size ={30} color='black'/>} navigation={navigation} />)
             }
 
             <View style={styles.onShow}>
@@ -56,7 +59,7 @@ export default Display = ({ navigation }) => {
                     )
                 }
 
-                <Bar title="Search notes" visible={isKeyboardVisible} />
+                <Bar title="Search notes" icon={<Icon name="search" size={20} color="black"/>} visible={isKeyboardVisible} />
             </View>
 
             <ScrollView>
