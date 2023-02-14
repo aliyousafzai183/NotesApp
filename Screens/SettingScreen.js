@@ -1,4 +1,5 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // component
 import TopNav from '../Components/topNavComponent';
@@ -8,7 +9,7 @@ export default Settings = ({ navigation }) => {
         <View style={styles.main}>
             <TopNav
                 navigation={navigation}
-                title="Settings" />
+                title={<Ionicons name="settings-outline" size={30} color="black"/>} />
             <View style={styles.container}>
                 <TouchableOpacity
                     style={styles.Buttons}>

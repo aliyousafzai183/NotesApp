@@ -2,12 +2,13 @@ import { View, Text, TouchableOpacity, StyleSheet, Linking } from 'react-native'
 
 // Component
 import TopNav from '../Components/topNavComponent';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default About = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View>
-                <TopNav navigation={navigation} title="About us" />
+                <TopNav navigation={navigation} title={<Ionicons name="md-information-circle-outline" size={35} color="black"/>} />
                 <Text style={styles.heading}>Notepad - Notes</Text>
                 <Text style={styles.text}>Notes is free, full-featured and easy to use notepad/todo app for Android and IOS.</Text>
                 <Text style={styles.text}>You can use it as a digital notebook or diary.</Text>

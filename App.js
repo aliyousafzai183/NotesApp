@@ -16,12 +16,19 @@ import TodoDisplay from './Screens/ToDoScreens/DisplayTodo';
 import SettingScreen from './Screens/SettingScreen';
 import About from './Screens/Aboutus';
 import DeletePage from './Screens/DeleteItems';
+import AddNewNote from './Screens/NoteScreens/AddNewNote';
 
 // navigation stacks
 // const Stack = createNativeStackNavigator();
 const RightDrawer = createDrawerNavigator();
 const LeftDrawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
+
+
+// use drop down instead of right drawer
+// link
+//  https://www.npmjs.com/package/react-native-dropdown-select-list
+
 
 const DisplayNotes = ({ navigation }) => {
   return (
@@ -46,16 +53,13 @@ const LeftDrawerNotes = () => {
           drawerPosition: 'left',
           overlayColor: 'transparent',
           drawerActiveBackgroundColor: 'white',
-          drawerItemStyle:{
-            borderBottomWidth:1,
-            borderColor:'gray'
-          },
           drawerStyle: {
             marginTop: '30%',
             width: '100%'
           },
-          headerStyle: {
-            backgroundColor: "#F6F6F6"
+          drawerItemStyle:{
+            borderBottomWidth:1,
+            borderColor:'gray'
           },
         }}
         component={DisplayNotes}
@@ -65,6 +69,13 @@ const LeftDrawerNotes = () => {
         options={{
           title: 'No category',
           header: () => null,
+          drawerPosition: 'left',
+          overlayColor: 'transparent',
+          drawerActiveBackgroundColor: 'white',
+          drawerStyle: {
+            marginTop: '30%',
+            width: '100%'
+          },
           drawerItemStyle:{
             borderBottomWidth:1,
             borderColor:'gray'
@@ -77,6 +88,13 @@ const LeftDrawerNotes = () => {
         options={{
           title: 'My favorites',
           header: () => null,
+          drawerPosition: 'left',
+          overlayColor: 'transparent',
+          drawerActiveBackgroundColor: 'white',
+          drawerStyle: {
+            marginTop: '30%',
+            width: '100%'
+          },
           drawerItemStyle:{
             borderBottomWidth:1,
             borderColor:'gray'
@@ -89,6 +107,13 @@ const LeftDrawerNotes = () => {
         options={{
           title: 'Locked notes',
           header: () => null,
+          drawerPosition: 'left',
+          overlayColor: 'transparent',
+          drawerActiveBackgroundColor: 'white',
+          drawerStyle: {
+            marginTop: '30%',
+            width: '100%'
+          },
           drawerItemStyle:{
             borderBottomWidth:1,
             borderColor:'gray'
@@ -101,6 +126,13 @@ const LeftDrawerNotes = () => {
         options={{
           title: 'Recently deleted',
           header: () => null,
+          drawerPosition: 'left',
+          overlayColor: 'transparent',
+          drawerActiveBackgroundColor: 'white',
+          drawerStyle: {
+            marginTop: '30%',
+            width: '100%'
+          },
           drawerItemStyle:{
             borderBottomWidth:1,
             borderColor:'gray'
@@ -292,7 +324,7 @@ const RightDrawerNotes = () => {
           },
           drawerStyle: {
             width: '40%',
-            height: '27%',
+            height: '35%',
             borderBottomLeftRadius:20,
           },
           headerStyle: {
@@ -300,6 +332,25 @@ const RightDrawerNotes = () => {
           },
         }}
         component={LeftDrawerNotes}
+      />
+      <RightDrawer.Screen
+        name="Add"
+        options={{
+          drawerLabel: 'Add Note',
+          title: 'Add Note',
+          header: () => null,
+          drawerPosition: 'right',
+          overlayColor: 'transparent',
+          drawerActiveBackgroundColor: 'white',
+          drawerItemStyle:{
+            borderBottomWidth:1,
+            borderColor:'gray'
+          },
+          headerStyle: {
+            backgroundColor: "#F6F6F6"
+          },
+        }}
+        component={AddNewNote}
       />
       <RightDrawer.Screen
         name="Delete"

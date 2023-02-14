@@ -1,15 +1,19 @@
-import { View, Text, StyleSheet, Keyboard, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, Keyboard, TouchableOpacity, ScrollView } from 'react-native';
 import { useState, useEffect } from 'react';
 
 // Import vector icons
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon1 from 'react-native-vector-icons/AntDesign';
 
 // components
 import Header from '../../Components/TopHeader';
 import NotesHead from '../../Components/SecondHeader';
 import Bar from '../../Components/SearchBar';
 import Notes from '../../Components/NotesComponent';
-import { ScrollView } from 'react-native-gesture-handler';
+import AddButton from '../../Components/AddButtonComponent';
+
+// data
+import { NotesData } from '../../database/GetNotesData';
 
 export default Display = ({ navigation }) => {
 
@@ -38,10 +42,10 @@ export default Display = ({ navigation }) => {
     return (
         <View style={styles.container}>
             {
-                (isKeyboardVisible ? <View></View> : <Header icon={<Icon name='navicon' size ={20} color='black'/>} navigation={navigation} />)
+                (isKeyboardVisible ? <View></View> : <Header icon={<Icon name='navicon' size={20} color='black' />} navigation={navigation} />)
             }
             {
-                (isKeyboardVisible ? <View></View> : <NotesHead title={"notes "} icon1={<Icon name='caret-left' size ={30} color='black'/>} icon2={<Icon name='caret-down' size ={30} color='black'/>} navigation={navigation} />)
+                (isKeyboardVisible ? <View></View> : <NotesHead title={"notes "} icon1={<Icon name='caret-left' size={30} color='black' />} icon2={<Icon name='caret-down' size={30} color='black' />} navigation={navigation} />)
             }
 
             <View style={styles.onShow}>
@@ -59,23 +63,22 @@ export default Display = ({ navigation }) => {
                     )
                 }
 
-                <Bar title="Search notes" icon={<Icon name="search" size={20} color="black"/>} visible={isKeyboardVisible} />
+                <Bar title="Search notes" icon={<Icon name="search" size={20} color="black" />} visible={isKeyboardVisible} />
             </View>
 
             <ScrollView>
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
-                <Notes text="Project Details" date="February 6, 2023" />
+                {
+                    NotesData.map((item, index) => {
+                        return (
+                            <Notes key={index} text={item.title} date={item.date} />
+                        )
+                    })
+                }
             </ScrollView>
-
+            
+            <View style={styles.addbtn}>
+                <AddButton icon={<Icon1 name="pluscircle" size={40} color="#1b93cf"/>} navigation={navigation}/>
+            </View>
         </View>
     )
 }
@@ -93,6 +96,13 @@ const styles = StyleSheet.create({
 
     goBackBtn: {
         fontSize: 30,
-        color:'black'
+        color: 'black'
+    },
+
+    addbtn:{
+        position:'absolute',
+        bottom:'3%',
+        right:'5%'
     }
+
 })
